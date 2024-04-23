@@ -103,7 +103,7 @@ imgs.forEach(function(img) {
         img.classList.add('fade-out-animate');
       }
     });
-  }, { rootMargin: '-50px' });
+  }, { rootMargin: '0px 0px -150px 0px' });
 
   // Start observing the image
   observer.observe(img);
@@ -129,7 +129,7 @@ textTransitionInLeft.forEach(function(element) {
         element.classList.add('slide-out-animate');
       }
     });
-  }, { rootMargin: '-100px' });
+  }, { rootMargin: '0px 0px -100px 0px' });
 
   // Start observing the element
   observer.observe(element);
