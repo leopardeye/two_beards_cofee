@@ -103,7 +103,7 @@ imgs.forEach(function(img) {
         img.classList.add('fade-out-animate');
       }
     });
-  }, { rootMargin: '0px 0px -150px 0px' });
+  }, { rootMargin: '0px 0px -50px 0px' });
 
   // Start observing the image
   observer.observe(img);
@@ -219,6 +219,36 @@ testimonialWrapperTwo.forEach(function(testimonialWrapperTwo) {
       }
     });
   });
+
+  // Start observing the .map-location element
+  observer.observe(testimonialWrapperTwo);
+});
+
+
+
+// Select all .testimonial-wrapper elements
+var imgShadowBox = document.querySelectorAll('.img-shadow-shadow-animation');
+
+// Loop over the .map-location elements
+imgShadowBox.forEach(function(testimonialWrapperTwo) {
+  // Generate a random delay between 0.5 and 1 seconds
+
+  // Create an Intersection Observer for each .map-location element
+  var observer = new IntersectionObserver(function(entries) {
+    // Loop over the entries
+    entries.forEach(function(entry) {
+      // If the .map-location element is entering the viewport
+      if (entry.isIntersecting) {
+        // Add the .opacity-in-animation class
+        testimonialWrapperTwo.classList.add('opacity-in-animation');
+        testimonialWrapperTwo.classList.remove('opacity-out-animation');
+      } else {
+        // Otherwise, add the .opacity-out-animation class
+        testimonialWrapperTwo.classList.remove('opacity-in-animation');
+        testimonialWrapperTwo.classList.add('opacity-out-animation');
+      }
+    });
+  }, { rootMargin: '0px 0px -50px 0px' });
 
   // Start observing the .map-location element
   observer.observe(testimonialWrapperTwo);
