@@ -103,22 +103,22 @@ imgs.forEach(function(img) {
         img.classList.add('fade-out-animate');
       }
     });
-  });
+  }, { rootMargin: '-50px' });
 
   // Start observing the image
   observer.observe(img);
 });
 
 // Select all elements with the .transition-left class
-var elements = document.querySelectorAll('.transition-left');
+var textTransitionInLeft = document.querySelectorAll('.transition-left');
 
 // Loop over the elements
-elements.forEach(function(element) {
+textTransitionInLeft.forEach(function(element) {
   // Create an Intersection Observer for each element
   var observer = new IntersectionObserver(function(entries) {
     // Loop over the entries
     entries.forEach(function(entry) {
-      // If the element is entering the viewport
+      // If the element is entering the viewport and the intersection ratio is above the threshold
       if (entry.isIntersecting) {
         // Add the .slide-in-animate class to animate the element
         element.classList.add('slide-in-animate');
@@ -129,7 +129,7 @@ elements.forEach(function(element) {
         element.classList.add('slide-out-animate');
       }
     });
-  });
+  }, { rootMargin: '-100px' });
 
   // Start observing the element
   observer.observe(element);
