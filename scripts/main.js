@@ -113,7 +113,7 @@ imgs.forEach(function(img) {
 var textTransitionInLeft = document.querySelectorAll('.transition-left');
 
 // Loop over the elements
-textTransitionInLeft.forEach(function(element) {
+textTransitionInLeft.forEach(function(textTransitionInLeft) {
   // Create an Intersection Observer for each element
   var observer = new IntersectionObserver(function(entries) {
     // Loop over the entries
@@ -121,18 +121,18 @@ textTransitionInLeft.forEach(function(element) {
       // If the element is entering the viewport and the intersection ratio is above the threshold
       if (entry.isIntersecting) {
         // Add the .slide-in-animate class to animate the element
-        element.classList.add('slide-in-animate');
-        element.classList.remove('slide-out-animate');
+        textTransitionInLeft.classList.add('slide-in-animate');
+        textTransitionInLeft.classList.remove('slide-out-animate');
       } else {
         // Otherwise, add the .slide-out-animate class to animate the element back
-        element.classList.remove('slide-in-animate');
-        element.classList.add('slide-out-animate');
+        textTransitionInLeft.classList.remove('slide-in-animate');
+        textTransitionInLeft.classList.add('slide-out-animate');
       }
     });
   }, { rootMargin: '0px 0px -100px 0px' });
 
   // Start observing the element
-  observer.observe(element);
+  observer.observe(textTransitionInLeft);
 });
 
 
