@@ -41,8 +41,20 @@ window.addEventListener('scroll', () => {
 
 hamburgerWrapper.addEventListener('click', toggleActiveClass);
 
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 function observeElement(element, className, rootMargin) {
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver(debounce((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         element.classList.add(className);
@@ -52,7 +64,7 @@ function observeElement(element, className, rootMargin) {
         element.classList.add('fade-out-animate');
       }
     });
-  }, { rootMargin });
+  }, 200), { rootMargin }); // 200ms debounce
 
   observer.observe(element);
 }
