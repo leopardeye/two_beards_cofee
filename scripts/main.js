@@ -139,6 +139,8 @@ if (window.location.pathname.includes('methods')) {
   });
 }
 
+
+if (window.location.pathname.includes('selection')) {
 document.querySelector('#single-origin-btn').addEventListener('click', function(event) {
   event.preventDefault();
   document.querySelector('#single-origin').scrollIntoView({ behavior: 'smooth' });
@@ -158,3 +160,4 @@ document.querySelector('#decaf-sec-btn').addEventListener('click', function(even
   event.preventDefault();
   document.querySelector('#decaf-sec').scrollIntoView({ behavior: 'smooth' });
 });
+}
