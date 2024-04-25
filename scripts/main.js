@@ -74,7 +74,7 @@ document.querySelectorAll('.fade-in').forEach((img) => {
 });
 
 document.querySelectorAll('.transition-left').forEach((textTransitionInLeft) => {
-  observeElement(textTransitionInLeft, 'slide-in-animate', '0px 0px -100px 0px');
+  observeElement(textTransitionInLeft, 'slide-in-animate', '0px 0px 0px 0px');
 });
 
 document.querySelectorAll('.map-location').forEach((mapLocation) => {
@@ -91,7 +91,7 @@ document.querySelectorAll('.testimonial-wrapper-2').forEach((testimonialWrapperT
 });
 
 document.querySelectorAll('.img-shadow-shadow-animation').forEach((imgShadowBox) => {
-  observeElement(imgShadowBox, 'opacity-in-animation', '0px 0px -50px 0px');
+  observeElement(imgShadowBox, 'opacity-in-animation', '0px 0px 0px 0px');
 });
 
 // Check if the current page is methods.html
@@ -138,3 +138,23 @@ if (window.location.pathname.includes('methods')) {
     });
   });
 }
+
+document.querySelector('#single-origin-btn').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.querySelector('#single-origin').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('#blend-origin-btn').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.querySelector('#blend-origin').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('#capsules-sec-btn').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.querySelector('#capsules-sec').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('#decaf-sec-btn').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.querySelector('#decaf-sec').scrollIntoView({ behavior: 'smooth' });
+});
